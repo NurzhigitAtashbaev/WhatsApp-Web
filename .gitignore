@@ -1,0 +1,8 @@
+.idea/
+.env.production
+env.staging
+db-tortoise.sqlite3
+db.sqlite3
+db.sqlite3.tortoise
+db.sqlite3.tortoise-shm
+db.sqlite3.tortoise-wal

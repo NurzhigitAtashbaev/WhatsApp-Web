@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Add Users to Group</h2>
+
+  <p>Select the users you want to add to this group:</p>
+
+  <form method="post">
+    {% csrf_token %}
+    {% for user in users %}
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="users" value="{{ user.username }}">
+        <label class="form-check-label" for="defaultCheck1">
+          {{ user.username }}
+        </label>
+      </div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">Add Users</button>
+    <a href="{% url 'chat:room' group_id %}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}
